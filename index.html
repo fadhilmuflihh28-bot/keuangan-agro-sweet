@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <title>Manajemen Keuangan Pelajar</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+
+  <div class="container">
+
+    <!-- HEADER -->
+    <div class="header">
+      <h1>💰 Keuangan Pelajar</h1>
+      <button id="themeToggle">🌙</button>
+    </div>
+
+    <!-- SALDO -->
+    <div class="saldo">
+      <h2>Saldo</h2>
+      <p id="saldo">Rp 0</p>
+    </div>
+
+    <!-- FORM TRANSAKSI -->
+    <form id="formTransaksi">
+      <input type="text" id="deskripsi" placeholder="Deskripsi" required>
+      <input type="number" id="jumlah" placeholder="Jumlah" required>
+
+      <select id="tipe">
+        <option value="masuk">Pemasukan</option>
+        <option value="keluar">Pengeluaran</option>
+        <option value="tabungan">Tabungan</option>
+      </select>
+
+      <select id="kategori">
+        <option>Jajan</option>
+        <option>Transport</option>
+        <option>Tabungan</option>
+        <option>Lainnya</option>
+      </select>
+
+      <button type="submit">Tambah</button>
+    </form>
+
+    <!-- TABUNGAN GOAL -->
+    <div class="tabungan">
+      <form id="formTabungan">
+        <input type="number" id="tujuan" placeholder="Total Tujuan Tabungan" required>
+        <input type="number" id="cicilan" placeholder="Jumlah Cicilan" required>
+        <button type="submit">Set Tabungan</button>
+      </form>
+      <p id="tabunganText">Tabungan belum diatur</p>
+
+      <div class="progress-wrap" style="display:none;">
+        <div class="progress-bar" id="progressBar"></div>
+      </div>
+      <p id="progressText"></p>
+    </div>
+
+    <!-- RIWAYAT -->
+    <div class="riwayat-header">
+      <h3>Riwayat Transaksi</h3>
+      <button id="hapusSemua" class="hapus-btn">Hapus Semua</button>
+    </div>
+    <ul id="listTransaksi"></ul>
+
+    <!-- GRAFIK -->
+    <canvas id="chart" style="margin-top:20px;"></canvas>
+
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
